@@ -1,0 +1,45 @@
+# CerradoPDF — Compose de produção para o servidor institucional UniCerrado.
+# Uso:
+#   cp .env.example .env   # na raiz do projeto, ajuste os valores
+#   docker compose --env-file ../../.env -f docker-compose.cerradopdf.yml up -d
+#
+# A aplicação sobe na porta 8080 interna; exponha-a atrás do proxy reverso
+# (nginx/Apache/Traefik) com HTTPS — ver INSTALACAO.md.
+
+services:
+  cerradopdf:
+    build:
+      context: ../..
+      dockerfile: docker/embedded/Dockerfile
+    image: cerradopdf:latest
+    container_name: cerradopdf
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080$${SYSTEM_ROOTURIPATH:-''}/api/v1/info/status | grep -q 'UP'"]
+      interval: 10s
+      timeout: 10s
+      retries: 16
+      start_period: 60s
+    ports:
+      # Apenas loopback: o proxy reverso no mesmo host encaminha o tráfego HTTPS.
+      - "127.0.0.1:8080:8080"
+    volumes:
+      # /configs: settings.yml gerado a partir das env vars (não guarda PDFs)
+      - cerradopdf-config:/configs:rw
+      # /logs: logs de aplicação (não contêm conteúdo de documentos)
+      - cerradopdf-logs:/logs:rw
+      # tessdata para OCR (baixe os traineddata se usar OCR — ver INSTALACAO.md)
+      - cerradopdf-tessdata:/usr/share/tessdata:rw
+    env_file:
+      - ../../.env
+    networks:
+      - cerradopdf-network
+
+networks:
+  cerradopdf-network:
+    driver: bridge
+
+volumes:
+  cerradopdf-config:
+  cerradopdf-logs:
+  cerradopdf-tessdata:

@@ -1,0 +1,9 @@
+<svg width="200" height="150" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CerradoPDF">
+  <rect x="64" y="4" width="72" height="72" rx="18" fill="#1D4DA1"/>
+  <path d="M86 24h16.6l11.4 11.4v22.4a3.2 3.2 0 0 1-3.2 3.2H86a3.2 3.2 0 0 1-3.2-3.2V27.2A3.2 3.2 0 0 1 86 24z" fill="#FFFFFF"/>
+  <path d="M102.6 24v11.4H114" fill="#C9D92E"/>
+  <rect x="88" y="43" width="20" height="3.4" rx="1.7" fill="#C9D92E"/>
+  <rect x="88" y="50" width="20" height="3.4" rx="1.7" fill="#1D4DA1" opacity="0.35"/>
+  <text x="100" y="112" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#17407F">Cerrado<tspan fill="#1D4DA1">PDF</tspan></text>
+  <text x="100" y="134" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2.2" fill="#6B7280">UNICERRADO</text>
+</svg>

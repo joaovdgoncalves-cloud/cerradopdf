@@ -1,0 +1,66 @@
+services:
+  - type: web
+    name: cerradopdf
+    runtime: docker
+    dockerfilePath: docker/embedded/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/v1/info/status
+    autoDeploy: true
+    envVars:
+      - key: UI_APPNAME
+        value: CerradoPDF
+      - key: UI_APPNAMENAVBAR
+        value: CerradoPDF
+      - key: UI_HOMEDESCRIPTION
+        value: Sistema Institucional de Manipulação de Documentos PDF da UniCerrado
+      - key: SYSTEM_DEFAULTLOCALE
+        value: pt-BR
+      - key: TZ
+        value: America/Sao_Paulo
+      - key: SYSTEM_BACKENDURL
+        sync: false   # https://<seu-app>.onrender.com
+      - key: SECURITY_ENABLELOGIN
+        value: "true"
+      - key: SECURITY_LOGINMETHOD
+        value: oauth2
+      - key: SECURITY_OAUTH2_ENABLED
+        value: "true"
+      - key: SECURITY_OAUTH2_PROVIDER
+        value: google
+      - key: SECURITY_OAUTH2_CLIENT_GOOGLE_CLIENTID
+        sync: false
+      - key: SECURITY_OAUTH2_CLIENT_GOOGLE_CLIENTSECRET
+        sync: false
+      - key: SECURITY_OAUTH2_USEASUSERNAME
+        value: email
+      - key: SECURITY_OAUTH2_AUTOCREATEUSER
+        value: "true"
+      - key: SECURITY_SSOAUTOLOGIN
+        value: "false"
+      - key: SECURITY_ALLOWEDEMAILDOMAINS
+        value: alunos.unicerrado.edu.br,unicerrado.edu.br,gmail.com
+      - key: SECURITY_INITIALLOGIN_USERNAME
+        value: admin
+      - key: SECURITY_INITIALLOGIN_PASSWORD
+        sync: false
+      - key: SYSTEM_FILEUPLOADLIMIT
+        value: 100MB
+      - key: SERVER_SERVLET_SESSION_COOKIE_SECURE
+        value: "true"
+      - key: SERVER_FORWARD_HEADERS_STRATEGY
+        value: framework
+      - key: SYSTEM_ENABLEANALYTICS
+        value: "false"
+      - key: SYSTEM_ENABLEPOSTHOG
+        value: "false"
+      - key: SYSTEM_ENABLESCARF
+        value: "false"
+      - key: SYSTEM_GOOGLEVISIBILITY
+        value: "false"
+      - key: SHOW_SURVEY
+        value: "false"
+      - key: METRICS_ENABLED
+        value: "false"
+      - key: DOCKER_ENABLE_SECURITY
+        value: "true"
