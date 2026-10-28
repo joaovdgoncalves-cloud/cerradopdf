@@ -8,6 +8,10 @@ services:
     healthCheckPath: /api/v1/info/status
     autoDeploy: true
     envVars:
+      - key: PORT
+        value: "8080"
+      - key: SERVER_PORT
+        value: "8080"
       - key: UI_APPNAME
         value: CerradoPDF
       - key: UI_APPNAMENAVBAR
