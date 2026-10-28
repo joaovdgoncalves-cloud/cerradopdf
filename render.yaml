@@ -8,6 +8,8 @@ services:
     healthCheckPath: /api/v1/info/status
     autoDeploy: true
     envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: "-Xmx320m -Xss1m -XX:MaxMetaspaceSize=160m"
       - key: PORT
         value: "8080"
       - key: SERVER_PORT
