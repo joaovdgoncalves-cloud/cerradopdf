@@ -15,7 +15,7 @@ if [ "$VERSION_TAG" != "alpha" ] && [ "$VERSION_TAG" != "ALPHA" ]; then
             if [ $? -eq 0 ]; then  # checks if curl was successful
                 rm -f app.jar
                 ln -s app-security.jar app.jar
-                chown cerradopdfuser:cerradopdfgroup app.jar || true
+                chown stirlingpdfuser:stirlingpdfgroup app.jar || true
                 chmod 755 app.jar || true
             fi
         fi

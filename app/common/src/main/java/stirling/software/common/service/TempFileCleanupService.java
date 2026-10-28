@@ -102,7 +102,7 @@ public class TempFileCleanupService {
                             || "proc".equals(fileName)
                             || "sys".equals(fileName)
                             || "dev".equals(fileName)
-                            || "hsperfdata_cerradopdfuser".equals(fileName)
+                            || "hsperfdata_stirlingpdfuser".equals(fileName)
                             || fileName.startsWith("hsperfdata_")
                             || ".pdfbox.cache".equals(fileName);
 

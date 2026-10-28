@@ -98,8 +98,8 @@ RUN set -eux; \
     ln -s /customFiles /app/customFiles; \
     ln -s /pipeline /app/pipeline; \
     ln -s /storage /app/storage; \
-    chown -h cerradopdfuser:cerradopdfgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
-    chown cerradopdfuser:cerradopdfgroup /app; \
+    chown -h stirlingpdfuser:stirlingpdfgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
+    chown stirlingpdfuser:stirlingpdfgroup /app; \
     chmod 750 /tmp/stirling-pdf; \
     chmod 750 /tmp/stirling-pdf/heap_dumps; \
     fc-cache -f
@@ -113,7 +113,7 @@ ENV VERSION_TAG=$VERSION_TAG \
     STIRLING_AOT_ENABLE="false" \
     _JVM_OPTS="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1PeriodicGCInterval=10000 -XX:G1PeriodicGCSystemLoadThreshold=0.0 -XX:+G1PeriodicGCInvokesConcurrent -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication -XX:+ExplicitGCInvokesConcurrent -XX:ReservedCodeCacheSize=96m -XX:CICompilerCount=2 -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     JAVA_CUSTOM_OPTS="" \
-    HOME=/home/cerradopdfuser \
+    HOME=/home/stirlingpdfuser \
     PUID=1000 \
     PGID=1000 \
     UMASK=022 \

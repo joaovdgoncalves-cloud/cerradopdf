@@ -630,15 +630,15 @@ ARG PUID=1000
 ARG PGID=1000
 
 RUN set -eux; \
-    if ! getent group cerradopdfgroup >/dev/null 2>&1; then \
-      groupadd -g "${PGID}" cerradopdfgroup 2>/dev/null \
-        || groupadd cerradopdfgroup; \
+    if ! getent group stirlingpdfgroup >/dev/null 2>&1; then \
+      groupadd -g "${PGID}" stirlingpdfgroup 2>/dev/null \
+        || groupadd stirlingpdfgroup; \
     fi; \
-    if ! id -u cerradopdfuser >/dev/null 2>&1; then \
-      useradd -m -u "${PUID}" -g cerradopdfgroup \
-        -d /home/cerradopdfuser -s /bin/bash cerradopdfuser 2>/dev/null \
-        || useradd -m -g cerradopdfgroup \
-          -d /home/cerradopdfuser -s /bin/bash cerradopdfuser; \
+    if ! id -u stirlingpdfuser >/dev/null 2>&1; then \
+      useradd -m -u "${PUID}" -g stirlingpdfgroup \
+        -d /home/stirlingpdfuser -s /bin/bash stirlingpdfuser 2>/dev/null \
+        || useradd -m -g stirlingpdfgroup \
+          -d /home/stirlingpdfuser -s /bin/bash stirlingpdfuser; \
     fi
 
 RUN set -eux; \
@@ -663,8 +663,8 @@ RUN set -eux; \
              /pipeline/watchedFolders /pipeline/finishedFolders \
              /storage \
              /tmp/stirling-pdf/heap_dumps; \
-    chown -R cerradopdfuser:cerradopdfgroup \
-      /home/cerradopdfuser /configs /logs /customFiles /pipeline /storage \
+    chown -R stirlingpdfuser:stirlingpdfgroup \
+      /home/stirlingpdfuser /configs /logs /customFiles /pipeline /storage \
       /tmp/stirling-pdf; \
     chmod 750 /tmp/stirling-pdf; \
     chmod 750 /tmp/stirling-pdf/heap_dumps

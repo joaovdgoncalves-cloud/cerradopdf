@@ -246,7 +246,7 @@ SWITCH_USER_WARNING_EMITTED=false
 
 warn_switch_user_once() {
   if [ "$SWITCH_USER_WARNING_EMITTED" = false ]; then
-    log "WARNING: Unable to switch to user ${RUNTIME_USER:-cerradopdfuser}; running command as ${CURRENT_USER}."
+    log "WARNING: Unable to switch to user ${RUNTIME_USER:-stirlingpdfuser}; running command as ${CURRENT_USER}."
     SWITCH_USER_WARNING_EMITTED=true
   fi
 }
@@ -1212,7 +1212,7 @@ umask "$UMASK_VAL" 2>/dev/null || umask 022
 
 # ---------- XDG_RUNTIME_DIR ----------
 # Create the runtime directory, respecting UID/GID settings.
-RUNTIME_USER="cerradopdfuser"
+RUNTIME_USER="stirlingpdfuser"
 if id -u "$RUNTIME_USER" >/dev/null 2>&1; then
   RUID="$(id -u "$RUNTIME_USER")"
   RGRP="$(id -gn "$RUNTIME_USER")"
@@ -1246,15 +1246,15 @@ fi
 # ---------- UID/GID remap ----------
 # Remap user/group IDs to match container runtime settings.
 if [ "$(id -u)" -eq 0 ]; then
-  if id -u cerradopdfuser >/dev/null 2>&1; then
-    if [ -n "${PUID:-}" ] && [ "$PUID" != "$(id -u cerradopdfuser)" ]; then
-      usermod -o -u "$PUID" cerradopdfuser || true
-      chown cerradopdfuser:cerradopdfgroup "${XDG_RUNTIME_DIR}" 2>/dev/null || true
+  if id -u stirlingpdfuser >/dev/null 2>&1; then
+    if [ -n "${PUID:-}" ] && [ "$PUID" != "$(id -u stirlingpdfuser)" ]; then
+      usermod -o -u "$PUID" stirlingpdfuser || true
+      chown stirlingpdfuser:stirlingpdfgroup "${XDG_RUNTIME_DIR}" 2>/dev/null || true
     fi
   fi
-  if getent group cerradopdfgroup >/dev/null 2>&1; then
-    if [ -n "${PGID:-}" ] && [ "$PGID" != "$(getent group cerradopdfgroup | cut -d: -f3)" ]; then
-      groupmod -o -g "$PGID" cerradopdfgroup || true
+  if getent group stirlingpdfgroup >/dev/null 2>&1; then
+    if [ -n "${PGID:-}" ] && [ "$PGID" != "$(getent group stirlingpdfgroup | cut -d: -f3)" ]; then
+      groupmod -o -g "$PGID" stirlingpdfgroup || true
     fi
   fi
 fi
@@ -1273,7 +1273,7 @@ fi
 CHOWN_OK=true
 for p in "${CHOWN_PATHS[@]}"; do
   if [ -e "$p" ]; then
-    chown -R "cerradopdfuser:cerradopdfgroup" "$p" 2>/dev/null || CHOWN_OK=false
+    chown -R "stirlingpdfuser:stirlingpdfgroup" "$p" 2>/dev/null || CHOWN_OK=false
     find "$p" -type d -exec chmod 755 {} + 2>/dev/null || true
   fi
 done
@@ -1306,7 +1306,7 @@ for private_dir in /tmp/stirling-pdf "$STIRLING_FILE_STORE"; do
   esac
   mkdir -p "$private_dir" 2>/dev/null || true
   if [ -d "$private_dir" ]; then
-    chown "cerradopdfuser:cerradopdfgroup" "$private_dir" 2>/dev/null || true
+    chown "stirlingpdfuser:stirlingpdfgroup" "$private_dir" 2>/dev/null || true
     chmod 700 "$private_dir" 2>/dev/null || true
   fi
 done
