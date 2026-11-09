@@ -20,15 +20,20 @@ set SYSTEM_BACKENDURL=http://localhost:8080
 set SECURITY_INITIALLOGIN_USERNAME=admin
 set SECURITY_INITIALLOGIN_PASSWORD=admin123
 
-rem --- Login Google: so ativa se existir oauth-local.env (arquivo local, nao vai pro Git) ---
-set SECURITY_ENABLELOGIN=false
+rem --- Login Google (padrao: ativado) ---
+set SECURITY_ENABLELOGIN=true
+set SECURITY_LOGINMETHOD=oauth2
+set SECURITY_OAUTH2_ENABLED=true
+set SECURITY_OAUTH2_PROVIDER=google
+set SECURITY_OAUTH2_CLIENT_GOOGLE_CLIENTID=992822893438-3oad48lnvqkhiapidesik78pg70dqrpn.apps.googleusercontent.com
+set SECURITY_OAUTH2_CLIENT_GOOGLE_CLIENTSECRET=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
+set SECURITY_OAUTH2_USEASUSERNAME=email
+set SECURITY_OAUTH2_AUTOCREATEUSER=true
+set SECURITY_ALLOWEDEMAILDOMAINS=alunos.unicerrado.edu.br,unicerrado.edu.br,gmail.com
+
+rem --- Overrides locais opcionais (oauth-local.env, fora do Git) ---
 if exist "%~dp0oauth-local.env" (
   for /f "usebackq eol=# tokens=1,* delims==" %%a in ("%~dp0oauth-local.env") do set "%%a=%%b"
-  set SECURITY_ENABLELOGIN=true
-  echo Login Google ATIVADO ^(oauth-local.env encontrado^)
-) else (
-  echo SEM login ^(modo livre^). Para ativar o Google, crie oauth-local.env
-  echo a partir de oauth-local.env.example com suas credenciais.
 )
 
 call gradlew.bat :stirling-pdf:bootRun --console=plain

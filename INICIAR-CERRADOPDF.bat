@@ -79,13 +79,31 @@ start "CerradoPDF - Frontend (5173)" cmd /k "%ROOT%start-frontend-local.bat"
 echo.
 echo ============================================
 echo   CerradoPDF iniciando!
+echo   O navegador abre sozinho quando estiver pronto.
 echo.
-echo   Aguarde ~1-2 min e abra:
-echo      http://127.0.0.1:5173
-echo.
-echo   Duas janelas foram abertas (backend+frontend).
-echo   Para desligar, feche essas janelas.
-echo.
+echo   Para desligar, feche as janelas backend/frontend.
 echo   Para expor na internet, rode: start-tunnel.bat
 echo ============================================
+
+rem --- Aguarda o frontend responder e abre o navegador (max ~3 min) ---
+set TRIES=0
+:wait_frontend
+curl -s -o nul http://127.0.0.1:5173/ --max-time 3
+if %errorlevel%==0 goto open_browser
+set /a TRIES+=1
+if %TRIES% GEQ 60 goto timeout_frontend
+timeout /t 3 /nobreak >nul
+goto wait_frontend
+
+:open_browser
+echo.
+echo   Pronto! Abrindo http://127.0.0.1:5173
+start "" http://127.0.0.1:5173
+goto fim
+
+:timeout_frontend
+echo.
+echo   O frontend demorou demais. Verifique a janela "CerradoPDF - Frontend".
+
+:fim
 pause
