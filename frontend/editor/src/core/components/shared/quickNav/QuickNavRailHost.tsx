@@ -5,10 +5,7 @@ import type { QuickNavEntry } from "@app/components/shared/quickNav/QuickNavRail
 import type { ToolId } from "@app/types/toolId";
 import { useQuickNavHost } from "@app/contexts/QuickNavHostContext";
 import { requestReaderMode } from "@app/utils/pendingReaderMode";
-import {
-  saveEditorReturnPath,
-  takeEditorReturnPath,
-} from "@app/services/workbenchSession";
+import { takeEditorReturnPath } from "@app/services/workbenchSession";
 import { EDITOR_BASENAME } from "@app/routes/editorBasename";
 import { PORTAL_BASENAME } from "@app/routes/portalBasename";
 import { HAS_PORTAL } from "@app/routes/hasPortal";
@@ -122,38 +119,8 @@ export function QuickNavRailHost() {
     },
   };
 
-  const processor: QuickNavEntry = {
-    id: "processor",
-    label: t("quickNav.processor", "Processor"),
-    icon: <Icon name="cpu" size={SIZE} filled={inPortal} />,
-    current: inPortal,
-    disabled:
-      HAS_PORTAL && !inPortal && !host?.portalAccess && !host?.isAnonymous,
-    reason:
-      HAS_PORTAL && !inPortal && !host?.portalAccess && !host?.isAnonymous
-        ? t("quickNav.noProcessorAccess", "Ask an admin for processor access")
-        : undefined,
-    onClick: () => {
-      if (host?.isAnonymous) {
-        requestProcessorSignup();
-        return;
-      }
-      if (inPortal) {
-        returnHome();
-        return;
-      }
-      if (inEditor) saveEditorReturnPath();
-      go(PORTAL_BASENAME);
-    },
-  };
-
-  // The processor is additive: dropping the editor with it left a lone reader
-  // entry in builds without a portal, with no way back out of reading.
-  const surfaces: QuickNavEntry[] = [
-    reader,
-    editor,
-    ...(HAS_PORTAL ? [processor] : []),
-  ];
+  // CerradoPDF: AI processor portal removed — the engine is not part of this deployment.
+  const surfaces: QuickNavEntry[] = [reader, editor];
 
   const within: QuickNavEntry[] = [
     ...(!host?.hasOpenFromComputer
@@ -231,7 +198,9 @@ export function QuickNavRailHost() {
       ...unusable("sharedSign"),
       onClick: () => openTool("sharedSign", "/shared-sign"),
     },
-  ];
+    // Entries the server cannot run (missing dependency, disabled, sign-in
+    // required) are removed from the rail instead of showing a dead button.
+  ].filter((entry) => !entry.disabled);
 
   // Reference material, not a workspace: it sits at the foot of the bar under a
   // question mark rather than competing with the apps for the top.
