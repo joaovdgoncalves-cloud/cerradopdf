@@ -286,6 +286,16 @@ export default defineConfig(async ({ mode, command }) => {
     changeOrigin: true,
     secure: false,
     xfwd: true,
+    // The dev server speaks plain HTTP, so http-proxy stamps
+    // X-Forwarded-Port: 80 on requests that arrived over HTTPS through a
+    // tunnel — the backend then builds redirect URIs like
+    // https://host:80/... which break TLS. Drop the port so it is derived
+    // from the Host header instead.
+    configure: (proxy: { on: (event: string, fn: (req: { removeHeader: (h: string) => void }) => void) => void }) => {
+      proxy.on("proxyReq", (proxyReq) => {
+        proxyReq.removeHeader("x-forwarded-port");
+      });
+    },
   };
 
   // Shared between `vite` (dev) and `vite preview` (production-build serve, used
