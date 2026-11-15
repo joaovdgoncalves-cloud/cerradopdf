@@ -3,14 +3,10 @@ title CerradoPDF - Backend (8080)
 cd /d "%~dp0"
 
 rem --- Java ---
-if exist "%TEMP%\jdk21\jdk-21.0.12.1+1\bin\java.exe" (
-  set "JAVA_HOME=%TEMP%\jdk21\jdk-21.0.12.1+1"
-  set "PATH=%JAVA_HOME%\bin;%PATH%"
-) else (
-  for /d %%i in ("%TEMP%\cerradopdf-jdk\jdk-*") do (
-    set "JAVA_HOME=%%i"
-    set "PATH=%%i\bin;%PATH%"
-  )
+for /d %%i in ("%USERPROFILE%\.cerradopdf\jdk-*") do (
+  set "JAVA_HOME=%%i"
+  set "ORG_GRADLE_JAVA_HOME=%%i"
+  set "PATH=%%i\bin;%PATH%"
 )
 
 rem --- Config local ---

@@ -11,13 +11,8 @@ echo.
 
 rem ---------- [1/4] Java 21 ----------
 echo [1/4] Verificando Java 21...
-if exist "%TEMP%\jdk21\jdk-21.0.12.1+1\bin\java.exe" (
-  set "JAVA_HOME=%TEMP%\jdk21\jdk-21.0.12.1+1"
-  set "PATH=%JAVA_HOME%\bin;%PATH%"
-  goto java_ok
-)
-if exist "%TEMP%\cerradopdf-jdk" (
-  for /d %%i in ("%TEMP%\cerradopdf-jdk\jdk-*") do (
+if exist "%USERPROFILE%\.cerradopdf" (
+  for /d %%i in ("%USERPROFILE%\.cerradopdf\jdk-*") do (
     set "JAVA_HOME=%%i"
     set "PATH=%%i\bin;%PATH%"
   )
@@ -27,12 +22,12 @@ where java >nul 2>nul
 if %errorlevel%==0 goto java_ok
 
 echo     Java nao encontrado. Baixando JDK 21 portatil (uma vez, ~190MB)...
-mkdir "%TEMP%\cerradopdf-jdk" 2>nul
-curl -L -o "%TEMP%\cerradopdf-jdk\jdk.zip" "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/eclipse"
+mkdir "%USERPROFILE%\.cerradopdf" 2>nul
+curl -L -o "%USERPROFILE%\.cerradopdf\jdk.zip" "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/eclipse"
 if errorlevel 1 ( echo ERRO ao baixar o JDK. & pause & exit /b 1 )
-tar -xf "%TEMP%\cerradopdf-jdk\jdk.zip" -C "%TEMP%\cerradopdf-jdk"
-del "%TEMP%\cerradopdf-jdk\jdk.zip"
-for /d %%i in ("%TEMP%\cerradopdf-jdk\jdk-*") do (
+powershell -Command "Expand-Archive -Force -Path '%USERPROFILE%\.cerradopdf\jdk.zip' -DestinationPath '%USERPROFILE%\.cerradopdf\'"
+del "%USERPROFILE%\.cerradopdf\jdk.zip"
+for /d %%i in ("%USERPROFILE%\.cerradopdf\jdk-*") do (
   set "JAVA_HOME=%%i"
   set "PATH=%%i\bin;%PATH%"
 )
