@@ -584,11 +584,15 @@ export function ToolWorkflowProvider({ children }: ToolWorkflowProviderProps) {
     setReaderMode(true);
   }, [setReaderMode]);
 
-  // Filter tools based on search query with fuzzy matching (name, description, id, synonyms)
+  // Filter tools based on search query with fuzzy matching (name, description, id, synonyms).
+  // Tools the server reports unavailable (missing dependency, disabled by admin)
+  // are dropped entirely rather than rendered dimmed.
   const filteredTools = useMemo(() => {
     if (!toolRegistry) return [];
-    return filterToolRegistryByQuery(toolRegistry, state.searchQuery);
-  }, [toolRegistry, state.searchQuery]);
+    return filterToolRegistryByQuery(toolRegistry, state.searchQuery).filter(
+      ({ item: [id] }) => toolAvailability[id]?.available !== false,
+    );
+  }, [toolRegistry, state.searchQuery, toolAvailability]);
 
   // An address naming no tool clears the tool, not reading: the reader's own path
   // decides that, and /reader names no tool either.
