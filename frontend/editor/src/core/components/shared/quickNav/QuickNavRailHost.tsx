@@ -198,6 +198,12 @@ export function QuickNavRailHost() {
       ...unusable("sharedSign"),
       onClick: () => openTool("sharedSign", "/shared-sign"),
     },
+    {
+      id: "about",
+      label: t("about.title", "Sobre"),
+      icon: <Icon name="info" size={SIZE} />,
+      onClick: () => go("/sobre"),
+    },
     // Entries the server cannot run (missing dependency, disabled, sign-in
     // required) are removed from the rail instead of showing a dead button.
   ].filter((entry) => !entry.disabled);

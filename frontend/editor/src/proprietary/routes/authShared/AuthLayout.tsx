@@ -1,6 +1,7 @@
 import React from "react";
 import { AuthShell } from "@app/auth/ui/AuthShell";
 import Footer from "@app/components/shared/Footer";
+import { DevelopedByCredit } from "./DevelopedByCredit";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -11,5 +12,16 @@ interface AuthLayoutProps {
  * the identical screen; this wires the editor's legal/cookie footer into it.
  */
 export default function AuthLayout({ children }: AuthLayoutProps) {
-  return <AuthShell footer={<Footer />}>{children}</AuthShell>;
+  return (
+    <AuthShell
+      footer={
+        <>
+          <DevelopedByCredit />
+          <Footer />
+        </>
+      }
+    >
+      {children}
+    </AuthShell>
+  );
 }

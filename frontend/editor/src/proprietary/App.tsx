@@ -8,6 +8,7 @@ import { ThemeProvider } from "@app/components/shared/ThemeProvider";
 
 const Landing = lazy(() => import("@app/routes/Landing"));
 const Login = lazy(() => import("@app/routes/Login"));
+const About = lazy(() => import("@app/routes/About"));
 const AuthCallback = lazy(() => import("@app/routes/AuthCallback"));
 const InviteAccept = lazy(() => import("@app/routes/InviteAccept"));
 const ShareLinkPage = lazy(() => import("@app/routes/ShareLinkPage"));
@@ -60,6 +61,7 @@ function MainRoutes() {
         <Route path="/auth/callback" element={<AuthCallback />} />
         <Route path="/invite/:token" element={<InviteAccept />} />
         <Route path="/share/:token" element={<ShareLinkPage />} />
+        <Route path="/sobre" element={<About />} />
       </Route>
       {/* The editor and its tool routes - Landing handles auth logic */}
       <Route path="/*" element={<Landing />} />
