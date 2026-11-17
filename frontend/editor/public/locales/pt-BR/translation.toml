@@ -10983,6 +10983,7 @@ config = "Config"
 files = "Arquivos"
 
 [quickNav]
+tutorial = "Tutorial"
 account = "Conta"
 docs = "Documentação"
 editor = "Editor"

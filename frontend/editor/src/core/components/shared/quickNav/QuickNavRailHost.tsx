@@ -9,8 +9,8 @@ import { takeEditorReturnPath } from "@app/services/workbenchSession";
 import { EDITOR_BASENAME } from "@app/routes/editorBasename";
 import { PORTAL_BASENAME } from "@app/routes/portalBasename";
 import { HAS_PORTAL } from "@app/routes/hasPortal";
-import { DOCS_PATH, HAS_DOCS } from "@app/routes/docsRoute";
-import { stripBasePath } from "@app/constants/app";
+import { DOCS_PATH } from "@app/routes/docsRoute";
+import { stripBasePath, withBasePath } from "@app/constants/app";
 import { rememberSettingsOrigin } from "@app/utils/settingsNavigation";
 import { canCreateProcessingFolders } from "@app/hooks/useProcessingFolderCreation";
 import { requestProcessingFolderCreation } from "@app/utils/pendingProcessingFolderCreation";
@@ -122,6 +122,10 @@ export function QuickNavRailHost() {
   // CerradoPDF: AI processor portal removed — the engine is not part of this deployment.
   const surfaces: QuickNavEntry[] = [reader, editor];
 
+  // The institutional tutorial PDF is served from public/ and opens in a new tab.
+  const openTutorial = () =>
+    window.open(withBasePath("Tutorial-CerradoPDF.pdf"), "_blank", "noopener");
+
   const within: QuickNavEntry[] = [
     ...(!host?.hasOpenFromComputer
       ? []
@@ -193,10 +197,16 @@ export function QuickNavRailHost() {
       label: t("home.sharedSign.title", "Shared Signing"),
       icon: <Icon name="pen-tool" size={SIZE} />,
       badge: host?.signingBadge,
-      badgeTone: "warning",
+      badgeTone: "warning" as const,
       ...openingTool("sharedSign"),
       ...unusable("sharedSign"),
       onClick: () => openTool("sharedSign", "/shared-sign"),
+    },
+    {
+      id: "tutorial",
+      label: t("quickNav.tutorial", "Tutorial"),
+      icon: <Icon name="file-text" size={SIZE} />,
+      onClick: openTutorial,
     },
     {
       id: "about",
@@ -207,10 +217,6 @@ export function QuickNavRailHost() {
     // Entries the server cannot run (missing dependency, disabled, sign-in
     // required) are removed from the rail instead of showing a dead button.
   ].filter((entry) => !entry.disabled);
-
-  // Reference material, not a workspace: it sits at the foot of the bar under a
-  // question mark rather than competing with the apps for the top.
-  const openDocs = HAS_DOCS ? () => go(DOCS_PATH) : undefined;
 
   // The avatar is the only way into settings now, so it lands on the account
   // section and the page's own nav carries the rest. Inside settings it is a
@@ -236,8 +242,7 @@ export function QuickNavRailHost() {
       onOpenAccount={openAccount}
       // The avatar stands for the whole page, not just its own section.
       accountActive={inSettings}
-      onOpenDocs={openDocs}
-      docsActive={inDocs}
+
       onInvite={
         // Spelt out: VIEW_PATHS lives in the portal, which core cannot import.
         HAS_PORTAL && host?.portalAccess
