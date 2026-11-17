@@ -53,18 +53,22 @@ export default function About() {
     <div className="about-page">
       <style>{`
         .about-page {
-          min-height: 100vh;
+          height: 100vh;
+          height: 100dvh;
           background-color: var(--c-surface-alt);
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
           padding: 2rem 1.25rem;
           overflow-y: auto;
         }
         .about-card {
           width: 100%;
           max-width: 42rem;
+          /* margin auto centers the card when there is room and still lets
+             the top scroll into view when the content overflows */
+          margin: auto 0;
+          flex-shrink: 0;
           background-color: var(--c-surface);
           border: 1px solid var(--c-border-subtle);
           border-radius: 1rem;
@@ -100,9 +104,9 @@ export default function About() {
         @media (max-width: 640px) {
           .about-page {
             padding: 1rem 0.75rem;
-            justify-content: flex-start;
           }
           .about-card {
+            margin: 0;
             padding: 1.5rem 1.25rem;
           }
           .about-devs {
