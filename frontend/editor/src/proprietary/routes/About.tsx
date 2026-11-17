@@ -144,7 +144,7 @@ export default function About() {
             <p style={sectionBody}>
               {t(
                 "about.whatIsBody",
-                "O CerradoPDF é a plataforma institucional de manipulação de documentos PDF da UniCerrado — Centro Universitário de Goiatuba. Reúne em um só lugar ferramentas para mesclar, dividir, comprimir, converter, assinar, proteger e extrair texto de documentos, direto do navegador e sem instalar nada.",
+                "O CerradoPDF é o sistema institucional de manipulação de documentos PDF da UniCerrado, o Centro Universitário de Goiatuba. Ele reúne num só lugar as ferramentas que o dia a dia acadêmico pede: mesclar, dividir, comprimir, converter, assinar, proteger e extrair texto de documentos. Tudo direto no navegador, sem precisar instalar nada.",
               )}
             </p>
           </section>
@@ -154,7 +154,7 @@ export default function About() {
             <p style={sectionBody}>
               {t(
                 "about.whoMadeBody",
-                "O sistema foi desenvolvido por alunos da UniCerrado, com apoio da Gestão da Tecnologia da Informação (GTI), como um projeto pensado para a realidade da nossa comunidade acadêmica: alunos que precisam enviar trabalhos, professores que organizam materiais, coordenações e setores administrativos que lidam com documentos todos os dias.",
+                "O sistema foi desenvolvido por alunos do curso de Gestão da Tecnologia da Informação da UniCerrado, pensando nas necessidades reais da nossa comunidade acadêmica.",
               )}
             </p>
             <ul className="about-devs">
@@ -169,7 +169,7 @@ export default function About() {
             <p style={sectionBody}>
               {t(
                 "about.whoForBody",
-                "Para toda a comunidade UniCerrado — estudantes, professores, servidores e setores administrativos. O acesso é feito com a conta institucional, sem cadastro adicional: é só entrar com o e-mail @alunos.unicerrado.edu.br ou @unicerrado.edu.br e usar.",
+                "Para toda a comunidade UniCerrado: estudantes, professores, servidores e setores administrativos. O acesso é feito com a conta institucional, sem cadastro adicional. Basta entrar com o e-mail @alunos.unicerrado.edu.br ou @unicerrado.edu.br e usar.",
               )}
             </p>
           </section>
