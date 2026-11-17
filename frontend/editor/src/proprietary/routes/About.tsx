@@ -25,12 +25,13 @@ const sectionBody: CSSProperties = {
 };
 
 const DEVELOPERS = [
-  "Kauan Martins Correia",
-  "Thiago Henrique Martins Alves",
-  "Richard Marques Pereira",
   "Carla Rodrigues Guimarães",
-  "Wellyngton Raell Martins Vieira",
+  "João Vitor Dias Gonçalves",
+  "Kauan Martins Correia",
   "Mateus Oliveira Julio",
+  "Richard Marques Pereira",
+  "Thiago Henrique Martins Alves",
+  "Wellyngton Raell Martins Vieira",
 ];
 
 /**
@@ -85,21 +86,16 @@ export default function About() {
           border-radius: 0.875rem;
         }
         .about-devs {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.625rem;
-          margin-top: 0.75rem;
-        }
-        .about-dev {
-          background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
-          border: 1px solid color-mix(in srgb, var(--c-primary) 25%, transparent);
-          border-radius: 0.625rem;
-          padding: 0.625rem 0.5rem;
-          text-align: center;
-          font-size: 0.8rem;
+          list-style: none;
+          margin: 0.75rem 0 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          align-items: center;
+          font-size: 0.9rem;
           font-weight: 600;
           color: var(--c-text);
-          line-height: 1.3;
         }
         @media (max-width: 640px) {
           .about-page {
@@ -109,18 +105,10 @@ export default function About() {
             margin: 0;
             padding: 1.5rem 1.25rem;
           }
-          .about-devs {
-            grid-template-columns: repeat(2, 1fr);
-          }
           .about-logos {
             flex-direction: column;
             gap: 0.75rem;
             padding: 0.75rem 1rem;
-          }
-        }
-        @media (max-width: 380px) {
-          .about-devs {
-            grid-template-columns: 1fr;
           }
         }
       `}</style>
@@ -169,13 +157,11 @@ export default function About() {
                 "O sistema foi desenvolvido por alunos da UniCerrado, com apoio da Gestão da Tecnologia da Informação (GTI), como um projeto pensado para a realidade da nossa comunidade acadêmica: alunos que precisam enviar trabalhos, professores que organizam materiais, coordenações e setores administrativos que lidam com documentos todos os dias.",
               )}
             </p>
-            <div className="about-devs">
+            <ul className="about-devs">
               {DEVELOPERS.map((name) => (
-                <div key={name} className="about-dev">
-                  {name}
-                </div>
+                <li key={name}>{name}</li>
               ))}
-            </div>
+            </ul>
           </section>
 
           <section>
