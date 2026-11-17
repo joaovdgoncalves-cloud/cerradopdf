@@ -13603,3 +13603,11 @@ confirm = "Extract"
 message_one = "This ZIP contains {{count}} file. Extract anyway?"
 message_other = "This ZIP contains {{count}} files. Extract anyway?"
 title = "Large ZIP File"
+
+[consent]
+title = "Antes de começar"
+subtitle = "Só um aviso rápido sobre seus arquivos"
+point1 = "Seus arquivos são processados no servidor e apagados automaticamente logo depois. Eles não ficam guardados na UniCerrado."
+point2 = "Sua biblioteca e suas preferências ficam salvas somente neste navegador. Se usar outro navegador ou outro computador, vai encontrar um ambiente novo."
+point3 = "No servidor fica apenas a sua conta de acesso. O conteúdo dos seus documentos não é registrado nem armazenado."
+accept = "Entendi, quero continuar"

@@ -5,6 +5,7 @@ import { LoadingFallback } from "@app/components/shared/LoadingFallback";
 import { stripBasePath } from "@app/constants/app";
 import { DOCS_PATH, HAS_DOCS } from "@app/routes/docsRoute";
 import { StartupPrompts } from "@app/components/startup/StartupPrompts";
+import { PrivacyConsentGate } from "@app/components/shared/PrivacyConsentGate";
 
 // Their own chunks: the settings tree (admin sections, account, licence flows)
 // and the docs manifest are both large, and most sessions open neither.
@@ -39,6 +40,7 @@ export function AppRoot() {
   return (
     <>
       <StartupPrompts />
+      <PrivacyConsentGate />
       <AppContent />
     </>
   );

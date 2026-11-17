@@ -13603,3 +13603,11 @@ confirm = "Extract"
 message_one = "This ZIP contains {{count}} file. Extract anyway?"
 message_other = "This ZIP contains {{count}} files. Extract anyway?"
 title = "Large ZIP File"
+
+[consent]
+title = "Before you start"
+subtitle = "Just a quick note about your files"
+point1 = "Your files are processed on the server and automatically deleted right after. They are not kept by UniCerrado."
+point2 = "Your library and preferences are saved only in this browser. On another browser or computer you will find a fresh environment."
+point3 = "Only your sign-in account is kept on the server. The content of your documents is never logged or stored."
+accept = "Got it, let me continue"
