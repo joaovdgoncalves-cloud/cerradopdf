@@ -24,6 +24,15 @@ const sectionBody: CSSProperties = {
   margin: 0,
 };
 
+const DEVELOPERS = [
+  "Kauan Martins Correia",
+  "Thiago Henrique Martins Alves",
+  "Richard Marques Pereira",
+  "Carla Rodrigues Guimarães",
+  "Wellyngton Raell Martins Vieira",
+  "Mateus Oliveira Julio",
+];
+
 /**
  * Institutional "Sobre" page for CerradoPDF: who built it, for whom, and what
  * it does. Standalone route (/sobre) linked from the quick nav rail.
@@ -41,37 +50,88 @@ export default function About() {
   });
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "var(--c-surface-alt)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "2rem 1.25rem",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "40rem",
-          backgroundColor: "var(--c-surface)",
-          border: "1px solid var(--c-border-subtle)",
-          borderRadius: "1rem",
-          padding: "2.5rem",
-        }}
-      >
+    <div className="about-page">
+      <style>{`
+        .about-page {
+          min-height: 100vh;
+          background-color: var(--c-surface-alt);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem 1.25rem;
+          overflow-y: auto;
+        }
+        .about-card {
+          width: 100%;
+          max-width: 42rem;
+          background-color: var(--c-surface);
+          border: 1px solid var(--c-border-subtle);
+          border-radius: 1rem;
+          padding: 2.5rem;
+        }
+        .about-logos {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1.25rem;
+          background-color: rgba(255, 255, 255, 0.96);
+          padding: 0.75rem 1.75rem;
+          border-radius: 0.875rem;
+        }
+        .about-devs {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.625rem;
+          margin-top: 0.75rem;
+        }
+        .about-dev {
+          background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--c-primary) 25%, transparent);
+          border-radius: 0.625rem;
+          padding: 0.625rem 0.5rem;
+          text-align: center;
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: var(--c-text);
+          line-height: 1.3;
+        }
+        @media (max-width: 640px) {
+          .about-page {
+            padding: 1rem 0.75rem;
+            justify-content: flex-start;
+          }
+          .about-card {
+            padding: 1.5rem 1.25rem;
+          }
+          .about-devs {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .about-logos {
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+          }
+        }
+        @media (max-width: 380px) {
+          .about-devs {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+
+      <div className="about-card">
         <div style={{ textAlign: "center", marginBottom: "1.75rem" }}>
           <img
             src={loginHeader}
             alt="CerradoPDF"
-            style={{ height: "3.5rem", width: "auto" }}
+            style={{ height: "3.5rem", width: "auto", maxWidth: "100%" }}
           />
           <h1
             style={{
               color: "var(--c-text)",
-              fontSize: "1.5rem",
+              fontSize: "clamp(1.25rem, 4vw, 1.5rem)",
               fontWeight: 700,
               margin: "1rem 0 0.25rem",
             }}
@@ -105,6 +165,13 @@ export default function About() {
                 "O sistema foi desenvolvido por alunos da UniCerrado, com apoio da Gestão da Tecnologia da Informação (GTI), como um projeto pensado para a realidade da nossa comunidade acadêmica: alunos que precisam enviar trabalhos, professores que organizam materiais, coordenações e setores administrativos que lidam com documentos todos os dias.",
               )}
             </p>
+            <div className="about-devs">
+              {DEVELOPERS.map((name) => (
+                <div key={name} className="about-dev">
+                  {name}
+                </div>
+              ))}
+            </div>
           </section>
 
           <section>
@@ -145,32 +212,43 @@ export default function About() {
             marginTop: "2rem",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "1.25rem",
-              backgroundColor: "rgba(255, 255, 255, 0.96)",
-              padding: "0.75rem 1.75rem",
-              borderRadius: "0.875rem",
-            }}
-          >
+          <div className="about-logos">
             <img
               src={unicerradoLogo}
               alt="UniCerrado"
-              style={{ height: "3rem", width: "auto", objectFit: "contain" }}
+              style={{
+                height: "3rem",
+                width: "auto",
+                maxWidth: "70%",
+                objectFit: "contain",
+              }}
             />
             <img
               src={gtiLogo}
               alt="Gestão da Tecnologia da Informação"
-              style={{ height: "2.75rem", width: "auto", objectFit: "contain" }}
+              style={{
+                height: "2.75rem",
+                width: "auto",
+                maxWidth: "40%",
+                objectFit: "contain",
+              }}
             />
           </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+          }}
+        >
           <Button variant="primary" onClick={() => navigate("/")}>
-            <Icon name="arrow-left" size="1em" style={{ marginRight: "0.5rem" }} />
+            <Icon
+              name="arrow-left"
+              size="1em"
+              style={{ marginRight: "0.5rem" }}
+            />
             {t("about.back", "Voltar para o CerradoPDF")}
           </Button>
         </div>
