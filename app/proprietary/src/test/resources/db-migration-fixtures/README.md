@@ -6,9 +6,9 @@ authenticate against a database created by an older version.
 
 | File | Source release | Tables | Notes |
 |---|---|---|---|
-| `stirling-pdf-v2.0.0.mv.db` | [v2.0.0](https://github.com/CerradoPDF-Tools/CerradoPDF/releases/tag/v2.0.0) | users, authorities, teams, sessions, audit_events, persistent_logins, invite_tokens, user_license_settings, user_settings | Pre-storage/workflow schema. |
-| `stirling-pdf-v2.5.0.mv.db` | [v2.5.0](https://github.com/CerradoPDF-Tools/CerradoPDF/releases/tag/v2.5.0) | same as v2.0.0 | Schema unchanged from v2.0.0; intentionally kept as a separate fixture to exercise the "skip every other minor" upgrade path. |
-| `stirling-pdf-v2.10.0.mv.db` | [v2.10.0](https://github.com/CerradoPDF-Tools/CerradoPDF/releases/tag/v2.10.0) | v2.5.0 tables + file_shares, file_share_accesses, stored_files, stored_file_blobs, storage_cleanup_entries, user_server_certificates, workflow_sessions, workflow_participants, participant_notifications | Adds the file-sharing and workflow signing schema. |
+| `stirling-pdf-v2.0.0.mv.db` | [v2.0.0](https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.0.0) | users, authorities, teams, sessions, audit_events, persistent_logins, invite_tokens, user_license_settings, user_settings | Pre-storage/workflow schema. |
+| `stirling-pdf-v2.5.0.mv.db` | [v2.5.0](https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.5.0) | same as v2.0.0 | Schema unchanged from v2.0.0; intentionally kept as a separate fixture to exercise the "skip every other minor" upgrade path. |
+| `stirling-pdf-v2.10.0.mv.db` | [v2.10.0](https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.10.0) | v2.5.0 tables + file_shares, file_share_accesses, stored_files, stored_file_blobs, storage_cleanup_entries, user_server_certificates, workflow_sessions, workflow_participants, participant_notifications | Adds the file-sharing and workflow signing schema. |
 
 All three were generated against H2 `2.3.232` and use the same on-disk file
 format, so the runtime driver can open any of them without conversion.
@@ -113,9 +113,9 @@ manual steps are short. For each version you want to capture:
 
 ```bash
 # 1. Download the JAR for that release (requires `gh` authenticated against
-#    github.com/CerradoPDF-Tools/CerradoPDF).
+#    github.com/Stirling-Tools/Stirling-PDF).
 gh release download v2.10.0 \
-  --repo CerradoPDF-Tools/CerradoPDF \
+  --repo Stirling-Tools/Stirling-PDF \
   --pattern 'CerradoPDF-with-login.jar' \
   --output /tmp/stirling-v2.10.0.jar
 

@@ -252,7 +252,7 @@ const GeneralSection: React.FC<GeneralSectionProps> = ({
               )}
             </Text>
             <Anchor
-              href="https://docs.cerradopdf.com/Configuration/System%20and%20Security/"
+              href="https://docs.stirlingpdf.com/Configuration/System%20and%20Security/"
               target="_blank"
               size="sm"
             >

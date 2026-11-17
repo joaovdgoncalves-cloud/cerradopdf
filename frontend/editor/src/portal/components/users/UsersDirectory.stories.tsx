@@ -57,7 +57,7 @@ const MEMBERS: Member[] = [
   {
     id: "1",
     name: "Matt Joseph",
-    email: "matt@cerradopdf.com",
+    email: "matt@stirlingpdf.com",
     role: "admin",
     status: "active",
     lastActive: "Now",
@@ -70,7 +70,7 @@ const MEMBERS: Member[] = [
   {
     id: "2",
     name: "Tom Reilly",
-    email: "tom@cerradopdf.com",
+    email: "tom@stirlingpdf.com",
     role: "team_owner",
     status: "active",
     lastActive: "12m ago",
@@ -83,7 +83,7 @@ const MEMBERS: Member[] = [
   {
     id: "3",
     name: "Sarah Kowalski",
-    email: "sarah@cerradopdf.com",
+    email: "sarah@stirlingpdf.com",
     role: "member",
     status: "active",
     lastActive: "30m ago",
@@ -96,7 +96,7 @@ const MEMBERS: Member[] = [
   {
     id: "4",
     name: "Priya Patel",
-    email: "priya@cerradopdf.com",
+    email: "priya@stirlingpdf.com",
     role: "member",
     status: "suspended",
     lastActive: "Never",
@@ -108,7 +108,7 @@ const MEMBERS: Member[] = [
   {
     id: "5",
     name: "Dana Okafor",
-    email: "dana@cerradopdf.com",
+    email: "dana@stirlingpdf.com",
     role: "team_owner",
     status: "active",
     lastActive: "1h ago",
@@ -121,7 +121,7 @@ const MEMBERS: Member[] = [
   {
     id: "6",
     name: "Lars Eriksson",
-    email: "lars@cerradopdf.com",
+    email: "lars@stirlingpdf.com",
     role: "member",
     status: "active",
     lastActive: "3h ago",
@@ -153,7 +153,7 @@ const STATE_MEMBERS: Member[] = [
   {
     id: "1",
     name: "Matt Joseph",
-    email: "matt@cerradopdf.com",
+    email: "matt@stirlingpdf.com",
     role: "admin",
     status: "active",
     lastActive: "Now",

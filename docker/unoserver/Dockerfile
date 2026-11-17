@@ -137,6 +137,6 @@ ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 
 LABEL org.opencontainers.image.title="CerradoPDF Unoserver" \
       org.opencontainers.image.description="Pinned unoserver build for CerradoPDF remote UNO mode" \
-      org.opencontainers.image.source="https://github.com/CerradoPDF-Tools/CerradoPDF" \
+      org.opencontainers.image.source="https://github.com/Stirling-Tools/Stirling-PDF" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.vendor="CerradoPDF-Tools"
+      org.opencontainers.image.vendor="Stirling-Tools"

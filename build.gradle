@@ -635,7 +635,7 @@ spotless {
 
 sonar {
     properties {
-        property "sonar.projectKey", "CerradoPDF-Tools_CerradoPDF"
+        property "sonar.projectKey", "Stirling-Tools_CerradoPDF"
         property "sonar.organization", "stirling-tools"
 
         property "sonar.exclusions", "**/build-wrapper-dump.json, **/src/main/java/org/apache/**, **/src/main/resources/static/pdfjs/**, **/src/main/resources/static/js/thirdParty/**"

@@ -3,13 +3,13 @@ echo "Running CerradoPDF with DISABLE_ADDITIONAL_FEATURES=${DISABLE_ADDITIONAL_F
 if [ "$VERSION_TAG" != "alpha" ] && [ "$VERSION_TAG" != "ALPHA" ]; then
     if [ "$DISABLE_ADDITIONAL_FEATURES" = "false" ] || [ "$DISABLE_ADDITIONAL_FEATURES" = "FALSE" ] || [ "$DOCKER_ENABLE_SECURITY" = "true" ] || [ "$DOCKER_ENABLE_SECURITY" = "TRUE" ]; then
         if [ ! -f app-security.jar ]; then
-            echo "Trying to download from: https://files.cerradopdf.com/v$VERSION_TAG/CerradoPDF-with-login.jar"
-            curl -L -o app-security.jar https://files.cerradopdf.com/v$VERSION_TAG/CerradoPDF-with-login.jar
+            echo "Trying to download from: https://files.stirlingpdf.com/v$VERSION_TAG/CerradoPDF-with-login.jar"
+            curl -L -o app-security.jar https://files.stirlingpdf.com/v$VERSION_TAG/CerradoPDF-with-login.jar
 
             # If the first download attempt failed, try without the 'v' prefix
             if [ $? -ne 0 ]; then
-                echo "Trying to download from: https://files.cerradopdf.com/$VERSION_TAG/CerradoPDF-with-login.jar"
-                curl -L -o app-security.jar https://files.cerradopdf.com/$VERSION_TAG/CerradoPDF-with-login.jar
+                echo "Trying to download from: https://files.stirlingpdf.com/$VERSION_TAG/CerradoPDF-with-login.jar"
+                curl -L -o app-security.jar https://files.stirlingpdf.com/$VERSION_TAG/CerradoPDF-with-login.jar
             fi
 
             if [ $? -eq 0 ]; then  # checks if curl was successful

@@ -49,7 +49,7 @@ jobs:
         env:
           VERSION: ${{ steps.info.outputs.version }}
         run: |
-          BASE="https://github.com/CerradoPDF-Tools/CerradoPDF/releases/download/v${VERSION}"
+          BASE="https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v${VERSION}"
 
           download_sha256() {
             local url="$1"
@@ -112,7 +112,7 @@ jobs:
           pkgname: stirling-pdf-desktop
           pkgbuild: .github/aur/stirling-pdf-desktop/PKGBUILD
           commit_username: UniCerrado
-          commit_email: contact@cerradopdf.com
+          commit_email: contact@stirlingpdf.com
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           commit_message: "Update to v${{ needs.get-release-info.outputs.version }}"
 
@@ -124,6 +124,6 @@ jobs:
       #     pkgname: stirling-pdf-server-bin
       #     pkgbuild: .github/aur/stirling-pdf-server-bin/PKGBUILD
       #     commit_username: UniCerrado
-      #     commit_email: contact@cerradopdf.com
+      #     commit_email: contact@stirlingpdf.com
       #     ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
       #     commit_message: "Update to v${{ needs.get-release-info.outputs.version }}"

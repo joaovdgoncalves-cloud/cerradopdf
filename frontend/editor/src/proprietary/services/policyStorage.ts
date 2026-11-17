@@ -58,7 +58,7 @@ function defaultState(policyKey: string): PolicyState {
 
 /** An obsolete reviewer email scrubbed from persisted state on read so it can
  *  re-default to the real signed-in user. */
-const STALE_REVIEWER_EMAIL = "matt@cerradopdf.com";
+const STALE_REVIEWER_EMAIL = "matt@stirlingpdf.com";
 
 /** Read the full policy state, seeding + healing any missing categories. */
 export function loadPolicies(): PoliciesByKey {

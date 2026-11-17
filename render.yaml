@@ -47,7 +47,7 @@ services:
       - key: SECURITY_SSOAUTOLOGIN
         value: "false"
       - key: SECURITY_ALLOWEDEMAILDOMAINS
-        value: alunos.unicerrado.edu.br,unicerrado.edu.br,gmail.com
+        value: alunos.unicerrado.edu.br,unicerrado.edu.br
       - key: SECURITY_INITIALLOGIN_USERNAME
         value: admin
       - key: SECURITY_INITIALLOGIN_PASSWORD

@@ -40,7 +40,7 @@ export default function AnalyticsChoiceSlide({
             size="sm"
             onClick={() =>
               window.open(
-                "https://docs.cerradopdf.com/analytics-telemetry/",
+                "https://docs.stirlingpdf.com/analytics-telemetry/",
                 "_blank",
               )
             }

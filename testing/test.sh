@@ -765,7 +765,7 @@ main() {
         fi
         local ultra_lite_build_log="$REPORT_DIR/Build-Ultra-Lite-Docker.build.log"
         if ! docker buildx build --build-arg VERSION_TAG=alpha \
-            -t docker.cerradopdf.com/stirlingtools/stirling-pdf:ultra-lite \
+            -t docker.stirlingpdf.com/stirlingtools/stirling-pdf:ultra-lite \
             -f ./docker/embedded/Dockerfile.ultra-lite \
             --load \
             ${DOCKER_CACHE_ARGS_ULTRA_LITE} . 2>&1 | tee "$ultra_lite_build_log"; then
@@ -844,7 +844,7 @@ main() {
         local fat_build_log="$REPORT_DIR/Build-Fat-Docker.build.log"
         if ! docker buildx build --build-arg VERSION_TAG=alpha \
             ${BASE_IMAGE_ARG} \
-            -t docker.cerradopdf.com/stirlingtools/stirling-pdf:fat \
+            -t docker.stirlingpdf.com/stirlingtools/stirling-pdf:fat \
             -f ./docker/embedded/Dockerfile.fat \
             --load \
             ${DOCKER_CACHE_ARGS_FAT} . 2>&1 | tee "$fat_build_log"; then

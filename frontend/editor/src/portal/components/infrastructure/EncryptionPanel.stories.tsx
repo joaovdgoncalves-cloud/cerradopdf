@@ -152,7 +152,7 @@ export const KeyRevoked: Story = {
             scopeId: 1,
             status: "DISABLED",
             statusChangedAt: "2026-08-11T14:02:00",
-            statusChangedBy: "connor@cerradopdf.com",
+            statusChangedBy: "connor@stirlingpdf.com",
           }),
           key({ keyId: "1f0b6a11-0000-4000-8000-000000000002", scopeId: 4 }),
         ],
@@ -179,7 +179,7 @@ export const KeyRestoredAsRetired: Story = {
             keyVersion: 1,
             status: "RETIRED",
             statusChangedAt: "2026-08-11T14:09:00",
-            statusChangedBy: "connor@cerradopdf.com",
+            statusChangedBy: "connor@stirlingpdf.com",
           }),
           key({
             keyId: "1f0b6a11-0000-4000-8000-000000000009",

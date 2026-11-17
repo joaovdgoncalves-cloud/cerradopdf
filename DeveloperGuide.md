@@ -68,7 +68,7 @@ These are not required to run the app but enable specific features. The app dete
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/CerradoPDF-Tools/CerradoPDF.git
+   git clone https://github.com/Stirling-Tools/Stirling-PDF.git
    cd CerradoPDF
    ```
 
@@ -215,7 +215,7 @@ These files provide pre-configured setups for different scenarios. For example, 
 services:
   stirling-pdf:
     container_name: CerradoPDF-Security
-    image: docker.cerradopdf.com/stirlingtools/stirling-pdf:latest
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
     deploy:
       resources:
         limits:
@@ -396,7 +396,7 @@ Important notes:
 
 6. Push your changes to your fork.
 7. Submit a pull request to the main repository.
-8. See additional [contributing guidelines](https://github.com/CerradoPDF-Tools/CerradoPDF/blob/main/CONTRIBUTING.md).
+8. See additional [contributing guidelines](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/CONTRIBUTING.md).
 
 When you raise a PR:
 
@@ -409,7 +409,7 @@ Address any issues that arise from these checks before finalizing your pull requ
 
 ## 9. API Documentation
 
-API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/CerradoPDF-Tools/CerradoPDF/).
+API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Stirling-PDF/).
 
 ## 10. Customization
 

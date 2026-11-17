@@ -5,7 +5,7 @@ import type { Member } from "@portal/api/users";
 const MEMBER: Member = {
   id: "3",
   name: "Sarah Kowalski",
-  email: "sarah@cerradopdf.com",
+  email: "sarah@stirlingpdf.com",
   role: "member",
   status: "active",
   lastActive: "30m ago",

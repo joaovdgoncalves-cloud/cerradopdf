@@ -701,10 +701,10 @@ RUN set -eux; \
 # Metadata labels - base image
 LABEL org.opencontainers.image.title="CerradoPDF Base" \
       org.opencontainers.image.description="Pre-built base image with Calibre, Ghostscript, QPDF, ImageMagick, LibreOffice, OCRmyPDF and dependencies" \
-      org.opencontainers.image.source="https://github.com/CerradoPDF-Tools/CerradoPDF" \
+      org.opencontainers.image.source="https://github.com/Stirling-Tools/Stirling-PDF" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.vendor="CerradoPDF-Tools" \
-      org.opencontainers.image.url="https://www.cerradopdf.com" \
-      org.opencontainers.image.documentation="https://docs.cerradopdf.com" \
-      maintainer="CerradoPDF-Tools" \
-      org.opencontainers.image.authors="CerradoPDF-Tools"
+      org.opencontainers.image.vendor="Stirling-Tools" \
+      org.opencontainers.image.url="https://www.stirlingpdf.com" \
+      org.opencontainers.image.documentation="https://docs.stirlingpdf.com" \
+      maintainer="Stirling-Tools" \
+      org.opencontainers.image.authors="Stirling-Tools"

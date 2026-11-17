@@ -127,13 +127,13 @@ ENV VERSION_TAG=$VERSION_TAG \
 # Metadata labels
 LABEL org.opencontainers.image.title="CerradoPDF Backend" \
       org.opencontainers.image.description="Backend-only version (no embedded UI) with Calibre, LibreOffice, Tesseract, OCRmyPDF" \
-      org.opencontainers.image.source="https://github.com/CerradoPDF-Tools/CerradoPDF" \
+      org.opencontainers.image.source="https://github.com/Stirling-Tools/Stirling-PDF" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.vendor="CerradoPDF-Tools" \
-      org.opencontainers.image.url="https://www.cerradopdf.com" \
-      org.opencontainers.image.documentation="https://docs.cerradopdf.com" \
-      maintainer="CerradoPDF-Tools" \
-      org.opencontainers.image.authors="CerradoPDF-Tools" \
+      org.opencontainers.image.vendor="Stirling-Tools" \
+      org.opencontainers.image.url="https://www.stirlingpdf.com" \
+      org.opencontainers.image.documentation="https://docs.stirlingpdf.com" \
+      maintainer="Stirling-Tools" \
+      org.opencontainers.image.authors="Stirling-Tools" \
       org.opencontainers.image.version="${VERSION_TAG}" \
       org.opencontainers.image.keywords="PDF, manipulation, backend, API, Spring Boot"
 

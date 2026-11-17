@@ -88,14 +88,14 @@ describe("injectOg (build-time prerender)", () => {
 
   it("uses absolute URLs + og:url + secure_url when a canonical base is given", () => {
     const out = injectOg(TEMPLATE, entry, {
-      ogBase: "https://cerradopdf.com",
+      ogBase: "https://stirlingpdf.com",
       pageUrlPath: "/compress",
     });
     expect(out).toContain(
-      '<meta property="og:image" content="https://cerradopdf.com/og_images/compress.png" />',
+      '<meta property="og:image" content="https://stirlingpdf.com/og_images/compress.png" />',
     );
     expect(out).toContain(
-      '<meta property="og:url" content="https://cerradopdf.com/compress" />',
+      '<meta property="og:url" content="https://stirlingpdf.com/compress" />',
     );
     expect(out).toContain("og:image:secure_url");
     // asset path stays absolute-from-root so it resolves at the clean URL

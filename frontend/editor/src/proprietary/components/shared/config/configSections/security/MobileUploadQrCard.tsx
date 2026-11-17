@@ -31,7 +31,7 @@ export function MobileUploadQrCard({
       <Stack gap="md">
         {/* Documentation Link */}
         <Anchor
-          href="https://docs.cerradopdf.com/Functionality/Mobile-Scanner"
+          href="https://docs.stirlingpdf.com/Functionality/Mobile-Scanner"
           target="_blank"
           size="xs"
           c="var(--c-accent-text)"

@@ -22,7 +22,7 @@ const perPage: PdfPerPageInfo = {
       ContentsCount: 1,
     },
     Images: [{ Name: "Im0", Width: 400, Height: 300, ColorSpace: "DeviceRGB" }],
-    Links: [{ URI: "https://cerradopdf.com" }],
+    Links: [{ URI: "https://stirlingpdf.com" }],
     Fonts: [
       { Name: "Helvetica", IsEmbedded: true, Subtype: "Type1" },
       { Name: "Times-Roman", IsEmbedded: false, Subtype: "Type1" },

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/CerradoPDF-Tools/CerradoPDF/main/docs/stirling.png" width="80">
+  <img src="https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png" width="80">
   <br>
   <h1 align="center">CerradoPDF</h1>
 </p>

@@ -9,12 +9,12 @@ The CerradoPDF team takes security vulnerabilities seriously. We appreciate your
 You can report security vulnerabilities through two channels:
 
 1. **GitHub Security Advisory**:
-   - Navigate to the [Security tab](https://github.com/CerradoPDF-Tools/CerradoPDF/security) in our repository
+   - Navigate to the [Security tab](https://github.com/Stirling-Tools/Stirling-PDF/security) in our repository
    - Click on "Report a vulnerability"
    - Provide a detailed description of the vulnerability
 
 2. **Direct Email**:
-   - Send your report to security@cerradopdf.com
+   - Send your report to security@stirlingpdf.com
    - Please include as much information as possible about the vulnerability
 
 ### What to Include

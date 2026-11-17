@@ -36,7 +36,7 @@ public class ClusterLicenseGate {
             throw new IllegalStateException(
                     "Cluster mode (cluster.enabled=true) requires a SERVER or"
                             + " ENTERPRISE license. Configure stirling.premium.key with a valid"
-                            + " license key (contact sales@cerradopdf.com to obtain one), or set"
+                            + " license key (contact sales@stirlingpdf.com to obtain one), or set"
                             + " cluster.enabled=false.");
         }
         log.info("Cluster license gate: SERVER/ENTERPRISE license verified, cluster mode allowed.");

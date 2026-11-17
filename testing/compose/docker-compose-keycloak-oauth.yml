@@ -50,7 +50,7 @@ services:
 
   stirling-pdf-oauth:
     container_name: stirling-pdf-oauth-test
-    image: docker.cerradopdf.com/stirlingtools/stirling-pdf:latest
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile

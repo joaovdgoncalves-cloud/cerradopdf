@@ -14,7 +14,7 @@ const PIPELINES: PipelineView[] = [
     sources: [{ id: "src-claims", name: "Claims intake" }],
     steps: ["redact", "sanitize", "watermark"],
     output: "folder",
-    owner: "jane@cerradopdf.com",
+    owner: "jane@stirlingpdf.com",
   },
   {
     id: "pipe-archive",
@@ -27,7 +27,7 @@ const PIPELINES: PipelineView[] = [
     sources: [],
     steps: [],
     output: "inline",
-    owner: "jane@cerradopdf.com",
+    owner: "jane@stirlingpdf.com",
   },
 ];
 

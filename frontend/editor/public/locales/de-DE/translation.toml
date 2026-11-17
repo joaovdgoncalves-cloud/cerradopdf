@@ -12713,7 +12713,7 @@ unfavorite = "Aus Favoriten entfernen"
 [toolPanel.modePrompt]
 chooseFullscreen = "Vollbildmodus verwenden"
 chooseSidebar = "Seitenleistenmodus verwenden"
-description = "Sehen Sie sich beide Layouts an und entscheiden Sie, wie Sie die CerradoPDF-Tools erkunden möchten."
+description = "Sehen Sie sich beide Layouts an und entscheiden Sie, wie Sie die Stirling-Tools erkunden möchten."
 dismiss = "Vielleicht später"
 fullscreenDescription = "Alle Tools in einem Katalog durchsuchen, der den Arbeitsbereich überdeckt, bis Sie eines auswählen."
 fullscreenTitle = "Vollbildmodus - (veraltet)"

@@ -20,13 +20,13 @@ describe("buildMobileRouteUrl", () => {
   test("routes other mobile pages (mobile-sign) with the base path", () => {
     expect(
       buildMobileRouteUrl({
-        configuredUrl: "https://app.cerradopdf.com",
+        configuredUrl: "https://app.stirlingpdf.com",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
         routePath: "mobile-sign",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-sign?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-sign?session=abc-123");
   });
 
   test("configured URL with subpath keeps the route un-doubled", () => {
@@ -58,34 +58,34 @@ describe("buildMobileScannerUrl", () => {
   test("origin-only frontendUrl keeps the app base path (SaaS web regression)", () => {
     expect(
       buildMobileScannerUrl({
-        configuredUrl: "https://app.cerradopdf.com",
+        configuredUrl: "https://app.stirlingpdf.com",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 
   test("origin-only frontendUrl with a trailing slash keeps the app base path", () => {
     expect(
       buildMobileScannerUrl({
-        configuredUrl: "https://app.cerradopdf.com/",
+        configuredUrl: "https://app.stirlingpdf.com/",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 
   test("configured URL that already carries the subpath is used verbatim (no doubled base)", () => {
     expect(
       buildMobileScannerUrl({
-        configuredUrl: "https://app.cerradopdf.com/app",
+        configuredUrl: "https://app.stirlingpdf.com/app",
         sessionId,
         origin: "https://elsewhere.example",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 
   test("configured URL subpath with trailing slash is normalized", () => {
@@ -115,10 +115,10 @@ describe("buildMobileScannerUrl", () => {
       buildMobileScannerUrl({
         configuredUrl: "   ",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 
   test("custom port (LAN/desktop) is preserved", () => {
@@ -137,10 +137,10 @@ describe("buildMobileScannerUrl", () => {
       buildMobileScannerUrl({
         configuredUrl: "not a url",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 
   test("non-http(s) configured URL is ignored (no javascript: injection)", () => {
@@ -148,9 +148,9 @@ describe("buildMobileScannerUrl", () => {
       buildMobileScannerUrl({
         configuredUrl: "javascript:alert(1)",
         sessionId,
-        origin: "https://app.cerradopdf.com",
+        origin: "https://app.stirlingpdf.com",
         basePath: "/app",
       }),
-    ).toBe("https://app.cerradopdf.com/app/mobile-scanner?session=abc-123");
+    ).toBe("https://app.stirlingpdf.com/app/mobile-scanner?session=abc-123");
   });
 });

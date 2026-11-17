@@ -50,7 +50,7 @@ services:
 
   stirling-pdf-mcp:
     container_name: stirling-pdf-mcp-test
-    image: docker.cerradopdf.com/stirlingtools/stirling-pdf:latest
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile

@@ -166,7 +166,7 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({
           }}
           onClick={() =>
             window.open(
-              "https://docs.cerradopdf.com/Configuration/OCR",
+              "https://docs.stirlingpdf.com/Configuration/OCR",
               "_blank",
             )
           }

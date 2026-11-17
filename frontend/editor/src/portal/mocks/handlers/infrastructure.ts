@@ -85,7 +85,7 @@ export const infrastructureHandlers = [
       },
       {
         date: "2026-07-07 15:25:06",
-        username: "admin@cerradopdf.com",
+        username: "admin@stirlingpdf.com",
         ipaddress: "10.0.1.4",
         tool: "add-password",
         documentName: "scan-batch-0142.pdf",

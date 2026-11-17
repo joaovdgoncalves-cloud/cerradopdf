@@ -51,7 +51,7 @@ services:
 
   stirling-pdf-saml:
     container_name: stirling-pdf-saml-test
-    image: docker.cerradopdf.com/stirlingtools/stirling-pdf:latest
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile

@@ -50,7 +50,7 @@ If you would like to add or modify a translation, please see [How to add new lan
 
 ## Docs
 
-Documentation for CerradoPDF is handled in a separate repository. Please see [Docs repository](https://github.com/CerradoPDF-Tools/CerradoPDF-Tools.github.io) or use the "edit this page"-button at the bottom of each page at [https://docs.cerradopdf.com/](https://docs.cerradopdf.com/).
+Documentation for CerradoPDF is handled in a separate repository. Please see [Docs repository](https://github.com/Stirling-Tools/Stirling-PDF-Tools.github.io) or use the "edit this page"-button at the bottom of each page at [https://docs.stirlingpdf.com/](https://docs.stirlingpdf.com/).
 
 ## Fixing Bugs or Adding a New Feature
 

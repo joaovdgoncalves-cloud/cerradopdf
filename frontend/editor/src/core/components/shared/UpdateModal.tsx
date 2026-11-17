@@ -66,7 +66,7 @@ export interface DesktopInstallCanInstall {
 
 /** Docs URL referenced from the blocked alert. */
 const WINDOWS_INSTALL_DOCS_URL =
-  "https://docs.cerradopdf.com/Installation/Windows%20Installation/#automated-installation-msi-installer";
+  "https://docs.stirlingpdf.com/Installation/Windows%20Installation/#automated-installation-msi-installer";
 
 interface UpdateModalProps {
   opened: boolean;
@@ -105,7 +105,7 @@ function formatSize(bytes: number | null | undefined): string {
 type DesktopInstall = NonNullable<UpdateModalProps["desktopInstall"]>;
 type MigrationGuide = NonNullable<UpdateSummary["migration_guides"]>[number];
 
-const RELEASES_URL = "https://github.com/CerradoPDF-Tools/CerradoPDF/releases";
+const RELEASES_URL = "https://github.com/Stirling-Tools/Stirling-PDF/releases";
 
 // Show max 10 initially to keep the modal manageable
 const INITIAL_VERSION_COUNT = 10;

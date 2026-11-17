@@ -166,7 +166,7 @@ const payment = (
     />
     <KvRow
       label="Invoices go to"
-      value="matt@cerradopdf.com"
+      value="matt@stirlingpdf.com"
       door={<button type="button">Update</button>}
     />
   </>

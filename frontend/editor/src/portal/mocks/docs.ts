@@ -87,7 +87,7 @@ const QUICKSTART_SAMPLES: CodeSample[] = [
     key: "curl",
     label: "cURL",
     lang: "bash",
-    code: `curl https://api.cerradopdf.com/v1/invoice \\
+    code: `curl https://api.stirlingpdf.com/v1/invoice \\
   -H "Authorization: Bearer $STIRLING_API_KEY" \\
   -F "file=@invoice.pdf"`,
   },

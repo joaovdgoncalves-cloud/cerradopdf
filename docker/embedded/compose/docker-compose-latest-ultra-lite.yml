@@ -1,7 +1,7 @@
 services:
   stirling-pdf:
     container_name: CerradoPDF-Ultra-Lite
-    image: docker.cerradopdf.com/stirlingtools/stirling-pdf:ultra-lite
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:ultra-lite
     build:
       context: ../../../
       dockerfile: docker/embedded/Dockerfile.ultra-lite

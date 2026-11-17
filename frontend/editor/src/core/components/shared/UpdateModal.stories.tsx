@@ -12,7 +12,7 @@ const UPDATE_SUMMARY: UpdateSummary = {
     {
       version: "2.5.0",
       notes: "Config file format changed for custom watermark presets.",
-      url: "https://docs.cerradopdf.com/migration/2.5.0",
+      url: "https://docs.stirlingpdf.com/migration/2.5.0",
     },
   ],
 };

@@ -116,7 +116,7 @@ class InitialSetupTest {
             try (MockedStatic<GeneralUtils> util = mockStatic(GeneralUtils.class)) {
                 initialSetup.initLegalUrls();
 
-                assertThat(legal.getTermsAndConditions()).contains("cerradopdf.com/terms");
+                assertThat(legal.getTermsAndConditions()).contains("stirlingpdf.com/terms");
                 assertThat(legal.getPrivacyPolicy()).contains("privacy-policy");
                 util.verify(
                         () -> GeneralUtils.saveKeyToSettings(eq("legal.termsAndConditions"), any()),

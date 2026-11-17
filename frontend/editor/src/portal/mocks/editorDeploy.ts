@@ -32,7 +32,7 @@ const DOCKER_SNIPPET = `docker run -d --name stirling-editor \\
   -v stirling-data:/var/lib/stirling \\
   cerradopdf/editor:3.2.1`;
 
-const HELM_SNIPPET = `helm repo add stirling https://charts.cerradopdf.com
+const HELM_SNIPPET = `helm repo add stirling https://charts.stirlingpdf.com
 helm install editor stirling/editor \\
   --namespace stirling --create-namespace \\
   --set org.pairingToken="$PAIRING_TOKEN" \\
@@ -41,7 +41,7 @@ helm install editor stirling/editor \\
 
 const CLOUD_SNIPPET = `# Managed Cloud is provisioned for you — no install step.
 # Point your users at the org workspace URL:
-https://app.cerradopdf.com/o/acme/editor`;
+https://app.stirlingpdf.com/o/acme/editor`;
 
 /* ──────────────────────────────────────────────────────────────────────── */
 /*  Tier-aware fixture assembly                                              */
@@ -249,7 +249,7 @@ function summaryFor(
       lastRotated: tier === "enterprise" ? "11 days ago" : "34 days ago",
     },
     offlineActivationAvailable: tier === "enterprise",
-    workspaceUrl: "https://app.cerradopdf.com/o/acme/editor",
+    workspaceUrl: "https://app.stirlingpdf.com/o/acme/editor",
   };
 }
 

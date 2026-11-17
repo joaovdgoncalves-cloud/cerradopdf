@@ -1182,7 +1182,7 @@ public class ApplicationProperties {
                                         "Logout from the provider "
                                                 + registrationId
                                                 + " is not supported. Report it at"
-                                                + " https://github.com/CerradoPDF-Tools/CerradoPDF/issues");
+                                                + " https://github.com/Stirling-Tools/Stirling-PDF/issues");
                     };
                 }
             }

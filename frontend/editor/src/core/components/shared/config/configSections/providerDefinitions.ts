@@ -43,7 +43,7 @@ const useGoogleProvider = (): Provider => {
     type: "oauth2",
     scope: t("provider.oauth2.google.scope", "Sign-in authentication"),
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/OAuth%20SSO%20Configuration",
+      "https://docs.stirlingpdf.com/Configuration/OAuth%20SSO%20Configuration",
     fields: [
       {
         key: "clientId",
@@ -101,7 +101,7 @@ const useGitHubProvider = (): Provider => {
     type: "oauth2",
     scope: t("provider.oauth2.github.scope", "Sign-in authentication"),
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/OAuth%20SSO%20Configuration",
+      "https://docs.stirlingpdf.com/Configuration/OAuth%20SSO%20Configuration",
     fields: [
       {
         key: "clientId",
@@ -159,7 +159,7 @@ const useKeycloakProvider = (): Provider => {
     scope: t("provider.oauth2.keycloak.scope", "SSO"),
     businessTier: false,
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/OAuth%20SSO%20Configuration",
+      "https://docs.stirlingpdf.com/Configuration/OAuth%20SSO%20Configuration",
     fields: [
       {
         key: "issuer",
@@ -230,7 +230,7 @@ const useGenericOAuth2Provider = (): Provider => {
     scope: t("provider.oauth2.generic.scope", "SSO"),
     businessTier: false,
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/OAuth%20SSO%20Configuration",
+      "https://docs.stirlingpdf.com/Configuration/OAuth%20SSO%20Configuration",
     fields: [
       {
         key: "enabled",
@@ -347,7 +347,7 @@ const useSMTPProvider = (): Provider => {
     type: "oauth2",
     scope: t("provider.smtp.scope", "Email Notifications"),
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/System%20and%20Security/#email-configuration",
+      "https://docs.stirlingpdf.com/Configuration/System%20and%20Security/#email-configuration",
     fields: [
       {
         key: "enabled",
@@ -676,7 +676,7 @@ const useSAML2Provider = (): Provider => {
     scope: t("provider.saml2.scope", "SSO (SAML)"),
     businessTier: true,
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/SAML%20SSO%20Configuration/",
+      "https://docs.stirlingpdf.com/Configuration/SAML%20SSO%20Configuration/",
     fields: [
       {
         key: "enabled",
@@ -823,7 +823,7 @@ const useGoogleDriveProvider = (): Provider => {
     type: "googledrive",
     scope: t("provider.googledrive.scope", "File Import"),
     documentationUrl:
-      "https://docs.cerradopdf.com/Configuration/Google%20Drive%20File%20Picker/",
+      "https://docs.stirlingpdf.com/Configuration/Google%20Drive%20File%20Picker/",
     fields: [
       {
         key: "enabled",

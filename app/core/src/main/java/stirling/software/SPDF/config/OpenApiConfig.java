@@ -50,13 +50,13 @@ public class OpenApiConfig {
                                 new License()
                                         .name("Open-Core - MIT Licensed")
                                         .url(
-                                                "https://raw.githubusercontent.com/CerradoPDF-Tools/CerradoPDF/refs/heads/main/LICENSE"))
-                        .termsOfService("https://www.cerradopdf.com/terms")
+                                                "https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/refs/heads/main/LICENSE"))
+                        .termsOfService("https://www.stirlingpdf.com/terms")
                         .contact(
                                 new Contact()
                                         .name("CerradoPDF Software")
-                                        .url("https://www.cerradopdf.com")
-                                        .email("contact@cerradopdf.com"))
+                                        .url("https://www.stirlingpdf.com")
+                                        .email("contact@stirlingpdf.com"))
                         .description(DEFAULT_DESCRIPTION);
 
         OpenAPI openAPI = new OpenAPI().info(info).openapi("3.0.3");

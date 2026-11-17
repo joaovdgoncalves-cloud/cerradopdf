@@ -5,14 +5,14 @@ import type { PendingInvitation } from "@portal/api/users";
 const INVITATIONS: PendingInvitation[] = [
   {
     id: 1,
-    email: "priya@cerradopdf.com",
-    invitedBy: "tom@cerradopdf.com",
+    email: "priya@stirlingpdf.com",
+    invitedBy: "tom@stirlingpdf.com",
     expiresAt: new Date(Date.now() + 3 * 86400000).toISOString(),
   },
   {
     id: 2,
-    email: "lars@cerradopdf.com",
-    invitedBy: "dana@cerradopdf.com",
+    email: "lars@stirlingpdf.com",
+    invitedBy: "dana@stirlingpdf.com",
     expiresAt: new Date(Date.now() + 86400000).toISOString(),
   },
   {
@@ -42,8 +42,8 @@ export const ExpiresToday: Story = {
     invitations: [
       {
         id: 1,
-        email: "priya@cerradopdf.com",
-        invitedBy: "tom@cerradopdf.com",
+        email: "priya@stirlingpdf.com",
+        invitedBy: "tom@stirlingpdf.com",
         expiresAt: new Date(Date.now() + 3 * 3600000).toISOString(),
       },
     ],

@@ -18,16 +18,16 @@ const dockerCmd = (tag: string) =>
 const HELM = `helm repo add stirling-pdf https://stirling-tools.github.io/CerradoPDF/
 helm repo update
 helm install stirling-pdf stirling-pdf/stirling-pdf-chart \\\n  --namespace stirling-pdf --create-namespace`;
-const JAR_URL = "https://files.cerradopdf.com/CerradoPDF-with-login.jar";
+const JAR_URL = "https://files.stirlingpdf.com/CerradoPDF-with-login.jar";
 const JAR =
   "java -Xmx2g -jar CerradoPDF-with-login.jar\n# then open http://localhost:8080";
 
 const GUIDES = {
-  windows: "https://docs.cerradopdf.com/Installation/Windows%20Installation/",
-  mac: "https://docs.cerradopdf.com/Installation/Mac%20Installation/",
+  windows: "https://docs.stirlingpdf.com/Installation/Windows%20Installation/",
+  mac: "https://docs.stirlingpdf.com/Installation/Mac%20Installation/",
   linux: DOWNLOAD_URLS.LINUX_DOCS,
-  docker: "https://docs.cerradopdf.com/Installation/Docker%20Install",
-  kubernetes: "https://docs.cerradopdf.com/Installation/Kubernetes",
+  docker: "https://docs.stirlingpdf.com/Installation/Docker%20Install",
+  kubernetes: "https://docs.stirlingpdf.com/Installation/Kubernetes",
   manual: DOWNLOAD_URLS.LINUX_DOCS,
 } as const;
 

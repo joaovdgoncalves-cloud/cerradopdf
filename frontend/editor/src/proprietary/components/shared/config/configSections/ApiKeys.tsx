@@ -94,7 +94,7 @@ export default function ApiKeys() {
             <Stack gap={4}>
               <Text size="sm">
                 <Anchor
-                  href="https://docs.cerradopdf.com/API"
+                  href="https://docs.stirlingpdf.com/API"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
