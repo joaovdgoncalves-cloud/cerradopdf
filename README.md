@@ -19,10 +19,12 @@ na infraestrutura da própria instituição, sem envio de documentos a serviços
 - **Pronto para produção**: configuração 100% por variáveis de ambiente, compose próprio
   (`docker/compose/docker-compose.cerradopdf.yml`) e suporte a proxy reverso com HTTPS.
 
-## Instalação (servidor institucional)
+## Execução e instalação
 
-Consulte **[INSTALACAO.md](INSTALACAO.md)** para o guia completo: requisitos, autenticação
-Google Workspace, domínios permitidos, Docker Compose, proxy reverso e HTTPS.
+- **Uso local (um clique)**: consulte **[COMO-EXECUTAR.md](COMO-EXECUTAR.md)** — o que baixar,
+  como rodar com `INICIAR-CERRADOPDF.bat` e como ativar o login Google local.
+- **Servidor institucional**: consulte **[INSTALACAO.md](INSTALACAO.md)** — autenticação
+  Google Workspace, domínios permitidos, Docker Compose, proxy reverso e HTTPS.
 
 Resumo:
 
