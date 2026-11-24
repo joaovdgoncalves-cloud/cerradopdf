@@ -8,7 +8,7 @@ Guia de instalação do **CerradoPDF** no servidor institucional da UniCerrado.
 - Docker Engine 24+ e Docker Compose v2
 - 4 GB RAM mínimo (8 GB recomendado para OCR e arquivos grandes)
 - 20 GB de disco livre
-- Domínio público (ex.: `cerradopdf.unicerrado.edu.br`) apontando para o servidor
+- Domínio público `dipi.unicerrado.edu.br` apontando para o servidor
 - Certificado TLS (Let's Encrypt ou certificado institucional)
 
 ## 2. Configuração da autenticação (Google Workspace)
@@ -18,7 +18,7 @@ O acesso é feito com a conta institucional Google Workspace da UniCerrado.
 1. No [Google Cloud Console](https://console.cloud.google.com), crie um projeto (ou use o projeto institucional existente).
 2. Em **APIs e serviços → Tela de permissão OAuth**, configure como **Interno** (restringe ao Workspace).
 3. Em **Credenciais → Criar credenciais → ID do cliente OAuth**, tipo **Aplicativo da Web**:
-   - URI de redirecionamento autorizado: `https://<dominio>/login/oauth2/code/google`
+   - URI de redirecionamento autorizado: `https://dipi.unicerrado.edu.br/pdf/login/oauth2/code/google`
 4. Copie `Client ID` e `Client Secret` para o `.env`:
 
 ```env
@@ -58,14 +58,19 @@ A aplicação sobe em `127.0.0.1:8080` (loopback — só o proxy local acessa).
 ```nginx
 server {
     listen 443 ssl;
-    server_name cerradopdf.unicerrado.edu.br;
+    server_name dipi.unicerrado.edu.br;
 
-    ssl_certificate     /etc/letsencrypt/live/cerradopdf.unicerrado.edu.br/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/cerradopdf.unicerrado.edu.br/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/dipi.unicerrado.edu.br/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/dipi.unicerrado.edu.br/privkey.pem;
 
     client_max_body_size 100m;   # alinhar com SYSTEM_FILEUPLOADLIMIT
 
-    location / {
+    location = /pdf {
+        return 301 /pdf/;
+    }
+
+    location /pdf/ {
+        # Sem barra no fim de proxy_pass: o Spring recebe e valida o context path /pdf.
         proxy_pass http://127.0.0.1:8080;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto https;
