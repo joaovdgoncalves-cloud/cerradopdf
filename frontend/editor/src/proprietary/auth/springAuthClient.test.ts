@@ -8,6 +8,7 @@ import {
 } from "@app/auth/spring/springAuthClient";
 import { startOAuthNavigation } from "@app/extensions/oauthNavigation";
 import apiClient from "@app/services/apiClient";
+import { configureSpringAuth } from "@app/auth/config";
 // Side-effect: configures the shared Spring engine with the (mocked) apiClient
 // + oauthNavigation seam, so springAuth routes through the mocks below.
 import "@app/auth/configureSpringAuth";
@@ -358,6 +359,32 @@ describe("SpringAuthClient", () => {
       );
       expect(mockAssign).not.toHaveBeenCalled();
       expect(result.error).toBeNull();
+    });
+
+    it("should include the configured base path", async () => {
+      const mockAssign = vi.fn();
+      Object.defineProperty(window, "location", {
+        value: { assign: mockAssign },
+        writable: true,
+      });
+      vi.mocked(startOAuthNavigation).mockResolvedValueOnce(false);
+      configureSpringAuth({ basePath: "/pdf" });
+
+      try {
+        const result = await springAuth.signInWithOAuth({
+          provider: "/oauth2/authorization/google",
+        });
+
+        expect(startOAuthNavigation).toHaveBeenCalledWith(
+          "/pdf/oauth2/authorization/google",
+        );
+        expect(mockAssign).toHaveBeenCalledWith(
+          "/pdf/oauth2/authorization/google",
+        );
+        expect(result.error).toBeNull();
+      } finally {
+        configureSpringAuth({ basePath: "" });
+      }
     });
   });
 
