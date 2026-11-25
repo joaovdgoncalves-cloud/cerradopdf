@@ -51,7 +51,10 @@ public class RequestUriUtils {
                 || "/favicon.ico".equals(normalizedUri)
                 || "/manifest.json".equals(normalizedUri)
                 || "/site.webmanifest".equals(normalizedUri)
-                || "/index.html".equals(normalizedUri)) {
+                || "/index.html".equals(normalizedUri)
+                // CerradoPDF: the rail opens this bundled guide via window.open,
+                // which carries no JWT header — it must be public like the favicon.
+                || "/Tutorial-CerradoPDF.pdf".equals(normalizedUri)) {
             return true;
         }
 
