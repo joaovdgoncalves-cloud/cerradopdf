@@ -482,7 +482,7 @@ class SpringAuthClient {
 
       // Use the full path provided by the backend
       // This supports both OAuth2 (/oauth2/authorization/...) and SAML2 (/saml2/authenticate/...)
-      const redirectUrl = params.provider;
+      const redirectUrl = `${getSpringAuthConfig().basePath}${params.provider}`;
       const handled = await platform().startOAuthNavigation(redirectUrl);
       if (handled) {
         return { error: null };
